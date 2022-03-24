@@ -1,0 +1,26 @@
+{
+    "name": "maiyuan/idd",
+    "description": "This is Package.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "idd",
+            "email": "idd@google.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Maiyuan\\IDD\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Maiyuan\\IDD\\Tests\\": "tests/"
+        }
+    }
+}
