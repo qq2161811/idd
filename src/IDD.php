@@ -8,6 +8,6 @@ class IDD
 {
 	public function printRunning(): string
 	{
-		return 'running test';
+		return 'running test xxxxxx';
 	}
 }
