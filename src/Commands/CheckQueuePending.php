@@ -1,6 +1,6 @@
 <?php
 
-namespace IDD\Make\Commands;
+namespace IDD\Framework\Commands;
 
 use App\Http\System\Service\System\Pending;
 use Illuminate\Console\Command;
@@ -16,7 +16,7 @@ use Laravel\Horizon\MasterSupervisor;
  *
  * Class CheckQueuePending
  *
- * @package IDD\Make\Commands
+ * @package IDD\Framework\Commands
  * @author  ZhongYu 2021/11/9 6:03 下午
  */
 class CheckQueuePending extends Command

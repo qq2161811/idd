@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace IDD\Make\Providers;
+namespace IDD\Framework\Providers;
 
-use IDD\Make\Commands\Make\Curd\Generator;
+use IDD\Framework\Commands\Make\Curd\Generator;
 
 /**
  * curd服务提供者
  * Class MakeServiceProvider
  *
- * @package IDD\Make
+ * @package IDD\Framework
  * @author  ZhongYu<262815974@qq.com> 2022/3/27 1:40
  */
 class MakeServiceProvider extends ServiceProvider
@@ -35,7 +35,7 @@ class MakeServiceProvider extends ServiceProvider
 	/**
 	 * Register the service provider.
 	 *
-	 * @throws \IDD\Make\Exceptions\PackageException
+	 * @throws \IDD\Framework\Exceptions\PackageException
 	 * @author ZhongYu<262815974@qq.com> 2022/3/27 1:56
 	 */
 	public function register(): void

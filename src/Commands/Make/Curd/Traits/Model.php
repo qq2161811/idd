@@ -2,10 +2,10 @@
 
 declare(strict_types = 1);
 
-namespace IDD\Make\Commands\Make\Curd\Traits;
+namespace IDD\Framework\Commands\Make\Curd\Traits;
 
 
-use IDD\Make\HttpConstants;
+use IDD\Framework\Contracts\HttpConstants;
 use Doctrine\DBAL\Schema\Column;
 use Doctrine\DBAL\Types\DateType;
 use Doctrine\DBAL\Types\FloatType;
@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Artisan;
  * 模型相关
  * Trait Model
  *
- * @package IDD\Make\Commands\Make\Curd\Traits
+ * @package IDD\Framework\Commands\Make\Curd\Traits
  * @author  ShuQingZai<overbeck.jack@qq.com> 2022/2/21 10:07 AM
  */
 trait Model

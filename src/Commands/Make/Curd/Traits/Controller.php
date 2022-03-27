@@ -2,17 +2,17 @@
 
 declare(strict_types = 1);
 
-namespace IDD\Make\Commands\Make\Curd\Traits;
+namespace IDD\Framework\Commands\Make\Curd\Traits;
 
 
-use IDD\Make\HttpConstants;
+use IDD\Framework\Contracts\HttpConstants;
 
 
 /**
  * 控制器相关
  * Trait Controller
  *
- * @package IDD\Make\Commands\Make\Curd\Traits
+ * @package IDD\Framework\Commands\Make\Curd\Traits
  * @author  ShuQingZai<overbeck.jack@qq.com> 2022/2/21 10:06 AM
  */
 trait Controller

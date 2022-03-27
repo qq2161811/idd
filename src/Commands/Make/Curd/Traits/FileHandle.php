@@ -2,9 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace IDD\Make\Commands\Make\Curd\Traits;
+namespace IDD\Framework\Commands\Make\Curd\Traits;
 
-use IDD\Make\Commands\Make\Curd\CurdConstants;
+use IDD\Framework\Commands\Make\Curd\CurdConstants;
 use Doctrine\DBAL\Schema\Column;
 
 
@@ -12,7 +12,7 @@ use Doctrine\DBAL\Schema\Column;
  * 文件处理
  * Trait FileHandle
  *
- * @package IDD\Make\Commands\Make\Curd\Traits
+ * @package IDD\Framework\Commands\Make\Curd\Traits
  * @author  ShuQingZai<overbeck.jack@qq.com> 2022/2/21 10:23 AM
  */
 trait FileHandle

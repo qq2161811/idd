@@ -3,14 +3,14 @@
 declare(strict_types = 1);
 
 
-namespace IDD\Make\Commands\Make\Curd\Traits;
+namespace IDD\Framework\Commands\Make\Curd\Traits;
 
 
 /**
  * 路由表处理
  * Trait RoutesHandle
  *
- * @package IDD\Make\Commands\Make\Curd\Traits
+ * @package IDD\Framework\Commands\Make\Curd\Traits
  * @author  ShuQingZai<overbeck.jack@qq.com> 2022/2/21 10:38 AM
  */
 trait RoutesHandle

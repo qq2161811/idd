@@ -2,14 +2,14 @@
 
 declare(strict_types = 1);
 
-namespace IDD\Make\Commands\Make\Curd\Traits;
+namespace IDD\Framework\Commands\Make\Curd\Traits;
 
 
 /**
  * URL 链接地址
  * Trait URLHandle
  *
- * @package IDD\Make\Commands\Make\Curd\Traits
+ * @package IDD\Framework\Commands\Make\Curd\Traits
  * @author  ShuQingZai<overbeck.jack@qq.com> 2022/3/19 14:07
  */
 trait URLHandle

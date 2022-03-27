@@ -1,6 +1,6 @@
 <?php
 
-namespace IDD\Make\Commands;
+namespace IDD\Framework\Commands;
 
 use App\Models\Store;
 use App\Services\ShopifyBackup\StoreFrontToken;

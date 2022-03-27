@@ -2,13 +2,13 @@
 
 declare(strict_types = 1);
 
-namespace IDD\Make;
+namespace IDD\Framework\Contracts;
 
 /**
  * 参数约定
  * Interface Parameter
  *
- * @package IDD\Make
+ * @package IDD\Framework\Contracts
  * @author  ShuQingZai<overbeck.jack@qq.com> 2022/1/14 2:34 PM
  */
 interface Parameter

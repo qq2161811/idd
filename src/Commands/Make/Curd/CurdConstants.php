@@ -2,16 +2,16 @@
 
 declare(strict_types = 1);
 
-namespace IDD\Make\Commands\Make\Curd;
+namespace IDD\Framework\Commands\Make\Curd;
 
-use IDD\Make\HttpConstants;
+use IDD\Framework\Contracts\HttpConstants;
 
 
 /**
  * 常量类
  * Interface CurdConstants
  *
- * @package IDD\Make\Commands\Curd
+ * @package IDD\Framework\Commands\Curd
  * @author  ShuQingZai<overbeck.jack@qq.com> 2022/2/15 2:26 PM
  */
 interface CurdConstants extends HttpConstants

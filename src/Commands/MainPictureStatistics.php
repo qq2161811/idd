@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace IDD\Make\Commands;
+namespace IDD\Framework\Commands;
 
 use Illuminate\Console\Command;
 use App\Services\DataStat\MainPicture\MainPicture;

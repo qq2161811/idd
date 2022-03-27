@@ -2,16 +2,16 @@
 
 declare(strict_types = 1);
 
-namespace IDD\Make\Providers;
+namespace IDD\Framework\Providers;
 
-use IDD\Make\Providers\Concerns\InteractsWithApplication;
-use IDD\Make\Providers\Concerns\HasAssets;
-use IDD\Make\Providers\Concerns\HasConfig;
-use IDD\Make\Providers\Concerns\HasFactories;
-use IDD\Make\Providers\Concerns\HasMigrations;
-use IDD\Make\Providers\Concerns\HasTranslations;
-use IDD\Make\Providers\Concerns\HasViews;
-use IDD\Make\Exceptions\PackageException;
+use IDD\Framework\Providers\Concerns\InteractsWithApplication;
+use IDD\Framework\Providers\Concerns\HasAssets;
+use IDD\Framework\Providers\Concerns\HasConfig;
+use IDD\Framework\Providers\Concerns\HasFactories;
+use IDD\Framework\Providers\Concerns\HasMigrations;
+use IDD\Framework\Providers\Concerns\HasTranslations;
+use IDD\Framework\Providers\Concerns\HasViews;
+use IDD\Framework\Exceptions\PackageException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 use Illuminate\Support\Str;
@@ -21,7 +21,7 @@ use ReflectionClass;
  * 服务提供者基类
  * Class ServiceProvider
  *
- * @package IDD\Make
+ * @package IDD\Framework
  * @author  ZhongYu<262815974@qq.com> 2022/3/27 0:42
  */
 abstract class ServiceProvider extends IlluminateServiceProvider
@@ -137,7 +137,7 @@ abstract class ServiceProvider extends IlluminateServiceProvider
 	/**
 	 * Register the service provider.
 	 *
-	 * @throws \IDD\Make\Exceptions\PackageException
+	 * @throws \IDD\Framework\Exceptions\PackageException
 	 * @author ZhongYu<262815974@qq.com> 2022/3/27 1:55
 	 */
 	public function register(): void
@@ -173,7 +173,7 @@ abstract class ServiceProvider extends IlluminateServiceProvider
 	/**
 	 * Check package name.
 	 *
-	 * @throws \IDD\Make\Exceptions\PackageException
+	 * @throws \IDD\Framework\Exceptions\PackageException
 	 */
 	protected function checkPackageName(): void
 	{

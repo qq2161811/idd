@@ -1,6 +1,6 @@
 <?php
 
-namespace IDD\Make\Rules;
+namespace IDD\Framework\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
@@ -9,7 +9,7 @@ use Illuminate\Contracts\Validation\Rule;
  * 验证是否为 BizId
  * Class IsBizIdValue
  *
- * @package IDD\Make\Rules
+ * @package IDD\Framework\Rules
  * @author  ShuQingZai<overbeck.jack@qq.com> 2021/12/9 9:37 上午
  */
 class IsBizIdValue implements Rule

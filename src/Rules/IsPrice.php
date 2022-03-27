@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace IDD\Make\Rules;
+namespace IDD\Framework\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
@@ -11,7 +11,7 @@ use Illuminate\Contracts\Validation\Rule;
  *
  * Class IsPrice
  *
- * @package IDD\Make\Rules
+ * @package IDD\Framework\Rules
  * @author  ZhongYu 2022/3/16 7:10 PM
  */
 class IsPrice implements Rule

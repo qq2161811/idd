@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace IDD\Make\Exceptions;
+namespace IDD\Framework\Exceptions;
 
 use Exception;
 
@@ -11,7 +11,7 @@ use Exception;
  *
  * Class PackageException
  *
- * @package IDD\Make
+ * @package IDD\Framework
  * @author  ZhongYu<262815974@qq.com> 2022/3/27 1:50
  */
 class PackageException extends Exception

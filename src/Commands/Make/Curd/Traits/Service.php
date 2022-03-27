@@ -2,17 +2,17 @@
 
 declare(strict_types = 1);
 
-namespace IDD\Make\Commands\Make\Curd\Traits;
+namespace IDD\Framework\Commands\Make\Curd\Traits;
 
 
-use IDD\Make\HttpConstants;
+use IDD\Framework\Contracts\HttpConstants;
 
 
 /**
  * 服务相关
  * Trait Service
  *
- * @package IDD\Make\Commands\Make\Curd\Traits
+ * @package IDD\Framework\Commands\Make\Curd\Traits
  * @author  ShuQingZai<overbeck.jack@qq.com> 2022/2/21 10:09 AM
  */
 trait Service

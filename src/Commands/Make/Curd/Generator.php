@@ -2,24 +2,24 @@
 
 declare(strict_types = 1);
 
-namespace IDD\Make\Commands\Make\Curd;
+namespace IDD\Framework\Commands\Make\Curd;
 
 
-use IDD\Make\HttpConstants;
-use IDD\Make\Commands\Make\Curd\Traits\ArrayAndString;
-use IDD\Make\Commands\Make\Curd\Traits\BizFieldHandle;
-use IDD\Make\Commands\Make\Curd\Traits\Controller;
-use IDD\Make\Commands\Make\Curd\Traits\CurrentTableHandle;
-use IDD\Make\Commands\Make\Curd\Traits\EnumType;
-use IDD\Make\Commands\Make\Curd\Traits\FieldHandle;
-use IDD\Make\Commands\Make\Curd\Traits\FileHandle;
-use IDD\Make\Commands\Make\Curd\Traits\Model;
-use IDD\Make\Commands\Make\Curd\Traits\PriceType;
-use IDD\Make\Commands\Make\Curd\Traits\RoutesHandle;
-use IDD\Make\Commands\Make\Curd\Traits\Service;
-use IDD\Make\Commands\Make\Curd\Traits\URLHandle;
-use IDD\Make\Commands\Make\Curd\Traits\Validate;
-use IDD\Make\Commands\Make\Curd\Traits\YapiDocs;
+use IDD\Framework\Contracts\HttpConstants;
+use IDD\Framework\Commands\Make\Curd\Traits\ArrayAndString;
+use IDD\Framework\Commands\Make\Curd\Traits\BizFieldHandle;
+use IDD\Framework\Commands\Make\Curd\Traits\Controller;
+use IDD\Framework\Commands\Make\Curd\Traits\CurrentTableHandle;
+use IDD\Framework\Commands\Make\Curd\Traits\EnumType;
+use IDD\Framework\Commands\Make\Curd\Traits\FieldHandle;
+use IDD\Framework\Commands\Make\Curd\Traits\FileHandle;
+use IDD\Framework\Commands\Make\Curd\Traits\Model;
+use IDD\Framework\Commands\Make\Curd\Traits\PriceType;
+use IDD\Framework\Commands\Make\Curd\Traits\RoutesHandle;
+use IDD\Framework\Commands\Make\Curd\Traits\Service;
+use IDD\Framework\Commands\Make\Curd\Traits\URLHandle;
+use IDD\Framework\Commands\Make\Curd\Traits\Validate;
+use IDD\Framework\Commands\Make\Curd\Traits\YapiDocs;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
@@ -28,7 +28,7 @@ use Illuminate\Support\Str;
  * 创建curd模板
  * Class Make
  *
- * @package IDD\Make\Commands\Curd
+ * @package IDD\Framework\Commands\Curd
  * @author  ShuQingZai<overbeck.jack@qq.com> 2022/2/14 6:15 PM
  */
 class Generator extends GeneratorCommand

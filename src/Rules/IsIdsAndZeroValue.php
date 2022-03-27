@@ -1,6 +1,6 @@
 <?php
 
-namespace IDD\Make\Rules;
+namespace IDD\Framework\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Support\Arr;
@@ -10,7 +10,7 @@ use Illuminate\Support\Arr;
  * 是否为id与0 -- 集合
  * Class IsIdsValue
  *
- * @package IDD\Make\Rules
+ * @package IDD\Framework\Rules
  * @author  ShuQingZai<overbeck.jack@qq.com> 2021/11/19 2:17 下午
  */
 class IsIdsAndZeroValue implements Rule

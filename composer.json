@@ -1,5 +1,5 @@
 {
-    "name": "idd/test",
+    "name": "idd/framework",
     "description": "This is Package.",
     "type": "library",
     "license": "MIT",
@@ -22,12 +22,12 @@
     },
     "autoload": {
         "psr-4": {
-            "IDD\\Make\\": "src/"
+            "IDD\\Framework\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "IDD\\Make\\Tests\\": "tests/"
+            "IDD\\Framework\\Tests\\": "tests/"
         }
     }
 }

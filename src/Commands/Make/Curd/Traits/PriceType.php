@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace IDD\Make\Commands\Make\Curd\Traits;
+namespace IDD\Framework\Commands\Make\Curd\Traits;
 
 
 use Doctrine\DBAL\Schema\Column;
@@ -13,7 +13,7 @@ use Doctrine\DBAL\Types\DecimalType;
  * 价格
  * Trait PriceType
  *
- * @package IDD\Make\Commands\Make\Curd\Traits
+ * @package IDD\Framework\Commands\Make\Curd\Traits
  * @author  ShuQingZai<overbeck.jack@qq.com> 2022/3/19 13:58
  */
 trait PriceType

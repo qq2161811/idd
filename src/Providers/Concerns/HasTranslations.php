@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace IDD\Make\Providers\Concerns;
+namespace IDD\Framework\Providers\Concerns;
 
 /**
  * Trait     HasTranslations

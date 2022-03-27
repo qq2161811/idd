@@ -1,8 +1,8 @@
 <?php
 
-namespace IDD\Make\Commands\Make\Curd;
+namespace IDD\Framework\Commands\Make\Curd;
 
-use IDD\Make\Commands\Make\Curd\Traits\Author;
+use IDD\Framework\Commands\Make\Curd\Traits\Author;
 use Doctrine\DBAL\Schema\Table;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
@@ -134,7 +134,7 @@ abstract class GeneratorCommand extends Command
     /**
      * 样例模型
      *
-     * @var \IDD\Make\Commands\Make\Curd\CurdModel|null
+     * @var \IDD\Framework\Commands\Make\Curd\CurdModel|null
      */
     protected ?CurdModel $curdModel = null;
 

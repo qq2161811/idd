@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace IDD\Make\Commands;
+namespace IDD\Framework\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Carbon;
@@ -12,7 +12,7 @@ use Illuminate\Support\Carbon;
  * 命令行基类
  * Class BaseCommand
  *
- * @package IDD\Make\Commands
+ * @package IDD\Framework\Commands
  * @author  ShuQingZai<overbeck.jack@qq.com> 2022/2/24 2:32 PM
  */
 abstract class BaseCommand extends Command

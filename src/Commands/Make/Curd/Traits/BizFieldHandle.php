@@ -2,10 +2,10 @@
 
 declare(strict_types = 1);
 
-namespace IDD\Make\Commands\Make\Curd\Traits;
+namespace IDD\Framework\Commands\Make\Curd\Traits;
 
 
-use IDD\Make\Commands\Make\Curd\CurdConstants;
+use IDD\Framework\Commands\Make\Curd\CurdConstants;
 use Doctrine\DBAL\Schema\Column;
 use Illuminate\Support\Str;
 
@@ -14,7 +14,7 @@ use Illuminate\Support\Str;
  * 业务ID处理
  * Trait BizFieldHandle
  *
- * @package IDD\Make\Commands\Make\Curd\Traits
+ * @package IDD\Framework\Commands\Make\Curd\Traits
  * @author  ShuQingZai<overbeck.jack@qq.com> 2022/2/21 10:36 AM
  */
 trait BizFieldHandle

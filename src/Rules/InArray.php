@@ -1,6 +1,6 @@
 <?php
 
-namespace IDD\Make\Rules;
+namespace IDD\Framework\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
@@ -9,7 +9,7 @@ use Illuminate\Contracts\Validation\Rule;
  * 验证是否存在于 array 中 - 强类型检查
  * Class InArray
  *
- * @package IDD\Make\Rules
+ * @package IDD\Framework\Rules
  * @author  ShuQingZai<overbeck.jack@qq.com> 2022/3/3 4:08 PM
  */
 class InArray implements Rule

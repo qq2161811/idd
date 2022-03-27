@@ -2,14 +2,14 @@
 
 declare(strict_types = 1);
 
-namespace IDD\Make\Commands\Make\Curd\Traits;
+namespace IDD\Framework\Commands\Make\Curd\Traits;
 
 
 /**
  * 作者信息
  * Trait Author
  *
- * @package IDD\Make\Commands\Curd\Traits
+ * @package IDD\Framework\Commands\Curd\Traits
  * @author  ShuQingZai<overbeck.jack@qq.com> 2022/2/15 10:37 AM
  */
 trait Author

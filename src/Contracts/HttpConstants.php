@@ -2,13 +2,13 @@
 
 declare(strict_types = 1);
 
-namespace IDD\Make;
+namespace IDD\Framework\Contracts;
 
 /**
  * http 文件相关常量
  * Interface HttpConstants
  *
- * @package App\Common\Library\Http
+ * @package IDD\Framework\Contracts
  * @author  ShuQingZai<overbeck.jack@qq.com> 2022/2/15 1:51 PM
  */
 interface HttpConstants

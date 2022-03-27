@@ -2,10 +2,10 @@
 
 declare(strict_types = 1);
 
-namespace IDD\Make\Commands\Make\Curd\Traits;
+namespace IDD\Framework\Commands\Make\Curd\Traits;
 
 
-use IDD\Make\Parameter;
+use IDD\Framework\Contracts\Parameter;
 use Doctrine\DBAL\Schema\Column;
 use Doctrine\DBAL\Types\DateType;
 use Doctrine\DBAL\Types\FloatType;
@@ -18,7 +18,7 @@ use Illuminate\Support\Str;
  * YAPI 文档生成
  * Trait YapiDocs
  *
- * @package IDD\Make\Commands\Make\Curd\Traits
+ * @package IDD\Framework\Commands\Make\Curd\Traits
  * @author  ShuQingZai<overbeck.jack@qq.com> 2022/3/19 10:39
  */
 trait YapiDocs

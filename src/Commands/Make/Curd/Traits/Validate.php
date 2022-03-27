@@ -2,15 +2,15 @@
 
 declare(strict_types = 1);
 
-namespace IDD\Make\Commands\Make\Curd\Traits;
+namespace IDD\Framework\Commands\Make\Curd\Traits;
 
 
-use IDD\Make\HttpConstants;
-use IDD\Make\Rules\InArray;
-use IDD\Make\Rules\IsBizIdValue;
-use IDD\Make\Rules\IsIdValue;
-use IDD\Make\Rules\IsNegativePrice;
-use IDD\Make\Rules\IsPrice;
+use IDD\Framework\Contracts\HttpConstants;
+use IDD\Framework\Rules\InArray;
+use IDD\Framework\Rules\IsBizIdValue;
+use IDD\Framework\Rules\IsIdValue;
+use IDD\Framework\Rules\IsNegativePrice;
+use IDD\Framework\Rules\IsPrice;
 use Doctrine\DBAL\Schema\Column;
 use Doctrine\DBAL\Types\BooleanType;
 use Doctrine\DBAL\Types\DateType;
@@ -24,7 +24,7 @@ use Doctrine\DBAL\Types\PhpDateTimeMappingType;
  * 验证器相关
  * Trait Validate
  *
- * @package IDD\Make\Commands\Make\Curd\Traits
+ * @package IDD\Framework\Commands\Make\Curd\Traits
  * @author  ShuQingZai<overbeck.jack@qq.com> 2022/2/21 10:06 AM
  */
 trait Validate

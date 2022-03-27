@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace {{ namespace }};
 
 use App\Exceptions\BusinessException;
-use IDD\Make\Parameter;
+use IDD\Framework\Contracts\Parameter;
 use {{ parentNamespace }};
 use {{ modelNamespace }};
 use Illuminate\Database\Eloquent\Builder;
