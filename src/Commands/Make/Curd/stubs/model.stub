@@ -1,0 +1,23 @@
+<?php
+
+declare(strict_types = 1);
+
+namespace {{ namespace }};
+
+use App\Models\BaseModel;{{ softDelNamespace }}
+
+
+/**
+ * {{ classDesc }}
+ * Class {{ class }}{{ propertyDocs }}
+ */
+class {{ class }} extends BaseModel
+{{{ softDelName }}
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = '{{ tableName }}';{{ fillableList }}{{ castsList }}{{ defaultValues }}
+
+}

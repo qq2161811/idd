@@ -1,0 +1,109 @@
+<?php
+
+declare(strict_types = 1);
+
+namespace {{ namespace }};
+
+use {{ parentNamespace }};
+use Illuminate\Http\JsonResponse;
+
+
+/**
+ * {{ classDesc }}
+ * Class {{ class }}
+ *
+ * @package {{ namespace }}
+ * @author  {{ authorAndTime }}
+ */
+class {{ class }} extends {{ parentName }}
+{
+    /**
+     * 服务类
+     *
+     * @var \{{ srvFullName }}
+     */
+    protected $service;
+
+    /**
+     * 创建
+     *
+     * @link   //TODO::在 YAPI 上编写接口文档并填充接口文档地址到此处 @{{ author }}
+     * @api    POST //TODO::在 路由文件 中编写路由并填充路由地址到此处 @{{ author }}
+     * @return \Illuminate\Http\JsonResponse
+     * @author {{ authorAndTime }}
+     */
+    public function create(): JsonResponse
+    {
+        ${{ bizIdFieldNameCamel }} = $this->service->create($this->params);
+
+        return $this->success(['{{ bizFieldName }}' => ${{ bizIdFieldNameCamel }}]);
+    }
+
+    /**
+     * 详情
+     *
+     * @link   //TODO::在 YAPI 上编写接口文档并填充接口文档地址到此处 @{{ author }}
+     * @api    GET //TODO::在 路由文件 中编写路由并填充路由地址到此处 @{{ author }}
+     * @param  {{ bizIdFieldType }}  ${{ bizIdFieldNameCamel }}
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \App\Exceptions\BusinessException
+     * @author {{ authorAndTime }}
+     */
+    public function detail({{ bizIdFieldType }} ${{ bizIdFieldNameCamel }}): JsonResponse
+    {
+        $this->checkRouteId(${{ bizIdFieldNameCamel }});
+        $data = $this->service->detail(${{ bizIdFieldNameCamel }});
+
+        return $this->success($data);
+    }
+
+    /**
+     * 更新
+     *
+     * @link   //TODO::在 YAPI 上编写接口文档并填充接口文档地址到此处 @{{ author }}
+     * @api    POST //TODO::在 路由文件 中编写路由并填充路由地址到此处 @{{ author }}
+     * @param  {{ bizIdFieldType }}  ${{ bizIdFieldNameCamel }}
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \App\Exceptions\BusinessException
+     * @author {{ authorAndTime }}
+     */
+    public function update({{ bizIdFieldType }} ${{ bizIdFieldNameCamel }}): JsonResponse
+    {
+        $this->checkRouteId(${{ bizIdFieldNameCamel }});
+        $this->service->update(${{ bizIdFieldNameCamel }}, $this->params);
+
+        return $this->success();
+    }
+
+    /**
+     * 删除
+     *
+     * @link   //TODO::在 YAPI 上编写接口文档并填充接口文档地址到此处 @{{ author }}
+     * @api    POST //TODO::在 路由文件 中编写路由并填充路由地址到此处 @{{ author }}
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \App\Exceptions\BusinessException
+     * @throws \Throwable
+     * @author {{ authorAndTime }}
+     */
+    public function delete(): JsonResponse
+    {
+        $rows = $this->service->delete($this->getInputStrToArr('{{ bizFieldName }}s'));
+
+        return $this->success(['rows' => $rows]);
+    }
+
+    /**
+     * 获取列表
+     *
+     * @link   //TODO::在 YAPI 上编写接口文档并填充接口文档地址到此处 @{{ author }}
+     * @api    GET //TODO::在 路由文件 中编写路由并填充路由地址到此处 @{{ author }}
+     * @return \Illuminate\Http\JsonResponse
+     * @author {{ authorAndTime }}
+     */
+    public function index(): JsonResponse
+    {
+        $data = $this->service->index($this->params);
+
+        return $this->success($data);
+    }
+}

@@ -1,5 +1,5 @@
 {
-    "name": "maiyuan/idd",
+    "name": "idd/test",
     "description": "This is Package.",
     "type": "library",
     "license": "MIT",
@@ -11,16 +11,23 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=7.2.0"
+        "php": ">=7.4.0",
+        "illuminate/contracts": "^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "laravel/framework": "^8.0",
+        "doctrine/dbal": " ~2.13.0",
+        "phpunit/phpunit": "^9.3"
     },
     "autoload": {
         "psr-4": {
-            "Maiyuan\\IDD\\": "src/"
+            "IDD\\Make\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Maiyuan\\IDD\\Tests\\": "tests/"
+            "IDD\\Make\\Tests\\": "tests/"
         }
     }
 }

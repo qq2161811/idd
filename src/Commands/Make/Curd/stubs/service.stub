@@ -1,0 +1,156 @@
+<?php
+
+declare(strict_types = 1);
+
+namespace {{ namespace }};
+
+use App\Exceptions\BusinessException;
+use IDD\Make\Parameter;
+use {{ parentNamespace }};
+use {{ modelNamespace }};
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Arr;
+
+
+/**
+ * {{ classDesc }}
+ * Class {{ class }}
+ *
+ * @package {{ namespace }}
+ * @author  {{ authorAndTime }}
+ */
+class {{ class }} extends {{ parentName }}
+{
+    /**
+     * 创建
+     *
+     * @param  array  $params  请求参数
+     * @return {{ bizIdFieldType }}
+     * @author {{ authorAndTime }}
+     */
+    public function create(array $params): {{ bizIdFieldType }}
+    {
+        // TODO:: 实现具体的数据转换逻辑 @{{ author }}{{ createHandle }}
+
+        return $handleModel::create($save)->{{ bizFieldName }};
+    }
+
+    /**
+     * 详情
+     *
+     * @param  {{ bizIdFieldType }}  ${{ bizIdFieldNameCamel }}  业务ID
+     * @return \{{ fullModelClass }}
+     * @author {{ authorAndTime }}
+     */
+    public function detail({{ bizIdFieldType }} ${{ bizIdFieldNameCamel }}): {{ handleModel }}
+    {
+        // TODO:: 实现具体的数据转换逻辑 @{{ author }}
+        return {{ handleModel }}::{{ bizIdWhere }}(${{ bizIdFieldNameCamel }})->firstOrFail();
+    }
+
+    /**
+     * 更新
+     *
+     * @param  {{ bizIdFieldType }}  ${{ bizIdFieldNameCamel }}   业务ID
+     * @param  array   $params  请求参数
+     * @return void
+     * @author {{ authorAndTime }}
+     */
+    public function update({{ bizIdFieldType }} ${{ bizIdFieldNameCamel }}, array $params): void
+    {
+        // TODO:: 实现具体的数据转换逻辑 @{{ author }}
+        $model = app({{ handleModel }}::class);
+        $save  = Arr::only($params, $model->getFillable());
+        unset($save['{{ bizFieldName }}']);
+        $model::{{ bizIdWhere }}(${{ bizIdFieldNameCamel }})->firstOrFail(['{{ primaryKey }}'])->fill($save)->save();
+    }
+
+    /**
+     * 删除
+     *
+     * @param  array  ${{ bizIdFieldNameCamel }}s  业务ID集合
+     * @return int
+     * @throws \App\Exceptions\BusinessException
+     * @throws \Throwable
+     * @author {{ authorAndTime }}
+     */
+    public function delete(array ${{ bizIdFieldNameCamel }}s): int
+    {
+        // TODO:: 实现具体的数据转换逻辑 @{{ author }}
+        $lockKey = sprintf('%s_%s__%s', class_basename(__CLASS__), __FUNCTION__, md5(implode('_', ${{ bizIdFieldNameCamel }}s)));
+
+        return dbTransaction($lockKey, static function () use (${{ bizIdFieldNameCamel }}s) {
+            $model = app({{ handleModel }}::class);
+            if (count(${{ bizIdFieldNameCamel }}s) === 1) {
+                // 只有一条记录时，支持使用模型删除
+                return (int) $model::{{ bizIdWhere }}(array_shift(${{ bizIdFieldNameCamel }}s))->firstOrFail(['{{ primaryKey }}'])->delete();
+            }
+            // 批量删除，不建议使用模型删除，涉及批量操作数据库
+            if (($rows = $model->{{ deleteMethod }}(${{ bizIdFieldNameCamel }}s, true)) < 1) {
+                throw new BusinessException('没有可操作的数据记录');
+            }
+
+            return $rows;
+        });
+    }
+
+
+    /**
+     * 列表
+     *
+     * @param  array  $params
+     * @return array
+     * @author {{ authorAndTime }}
+     */
+    public function index(array $params): array
+    {
+        // TODO:: 实现具体的数据转换逻辑 @{{ author }}
+        // 分页
+        [$page, $pageSize] = $this->handlePagination($params);
+        // 排序
+        $orders = [
+            'createdAt' => 'created_at',
+            'updatedAt' => 'updated_at',
+        ];
+        [$orderBy, $sortBy] = $this->handleOrderByKey($params, $orders);
+        // 搜索
+        $model = {{ handleModel }}::query();
+        $this->filterByList($model, $params);
+        $data = $model->orderBy($orderBy, $sortBy)->paginate($pageSize, ['*'], Parameter::PAGE_KEY, $page);
+
+        return $this->formatByList($data);
+    }
+
+    /**
+     * 列表数据查询条件过滤
+     *
+     * @param  Builder  $builder
+     * @param  array    $params
+     * @author {{ authorAndTime }}
+     */
+    private function filterByList(Builder $builder, array $params): void
+    {{{ indexSearch }}
+    }
+
+    /**
+     * 列表数据格式化
+     *
+     * @param  \Illuminate\Pagination\LengthAwarePaginator  $data
+     * @return array
+     * @author {{ authorAndTime }}
+     */
+    private function formatByList(LengthAwarePaginator $data): array
+    {
+        // TODO:: 实现具体的数据转换逻辑 @{{ author }}
+        foreach ($data->items() as $item) {
+            /** @var {{ handleModel }} $item */
+            $item->makeHidden(['deleted_at']);
+        }
+
+        return [
+            'list'  => $data->items(),
+            'count' => $data->total(),
+        ];
+    }
+}

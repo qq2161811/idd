@@ -30,3 +30,6 @@ tests/Unit/ExampleTest.php
 /vendor/_laravel_idea/
 vendor/composer/autoload_classmap.php
 vendor/composer/autoload_static.php
+composer.phar
+composer.lock
+vendor

@@ -1,0 +1,59 @@
+<?php
+
+declare(strict_types = 1);
+
+namespace {{ namespace }};
+
+use {{ parentNamespace }};
+
+
+/**
+ * {{ classDesc }}
+ * Class {{ class }}
+ *
+ * @package {{ namespace }}
+ * @author  {{ authorAndTime }}
+ */
+class {{ class }} extends {{ parentName }}
+{
+    /**
+     * 验证场景
+     *
+     * @var array
+     */
+    public array $scenes = [
+        'create' => [
+{{ createScene }}
+        ],
+        'update' => [
+{{ updateScene }}
+        ],
+        'delete' => ['{{ bizFieldName }}s'],
+    ];
+
+    /**
+     * 验证规则
+     *
+     * @return array
+     * @author {{ authorAndTime }}
+     */
+    public function rules(): array
+    {
+        return array_merge($this->baseRules(),
+            [{{ rules }}
+            ]);
+    }
+
+    /**
+     * 错误提示信息
+     *
+     * @return array
+     * @author {{ authorAndTime }}
+     */
+    public function messages(): array
+    {
+        return array_merge($this->baseMessage(),
+            [{{ messages }}
+            ]);
+    }
+}
