@@ -188,7 +188,7 @@ class Generator extends GeneratorCommand
      */
     protected function getPwd(): string
     {
-        return $this->laravel['path'].'/Console/Commands/Make/Curd';
+        return dirname((new \ReflectionClass($this))->getFileName());
     }
 
     /**

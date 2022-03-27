@@ -90,7 +90,7 @@ abstract class ServiceProvider extends IlluminateServiceProvider
 	protected function resolveBasePath(): string
 	{
 		return dirname(
-			(new ReflectionClass($this))->getFileName(), 2
+			(new ReflectionClass($this))->getFileName(), 3
 		);
 	}
 
