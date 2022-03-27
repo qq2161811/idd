@@ -5,9 +5,12 @@ declare(strict_types=1);
 namespace IDD\Framework\Providers\Concerns;
 
 /**
- * Trait     HasViews
  *
- * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
+ *
+ * Trait HasViews
+ *
+ * @package IDD\Framework\Providers\Concerns
+ * @author  ZhongYu<262815974@qq.com> 2022/3/27 14:48
  */
 trait HasViews
 {

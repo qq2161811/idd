@@ -11,7 +11,8 @@ use Illuminate\Support\Str;
  *
  * Trait HasConfig
  *
- * @author ZhongYu<262815974@qq.com> 2022/3/27 1:43
+ * @package IDD\Framework\Providers\Concerns
+ * @author  ZhongYu<262815974@qq.com> 2022/3/27 14:48
  */
 trait HasConfig
 {
