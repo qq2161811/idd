@@ -44,7 +44,7 @@ class Generator extends GeneratorCommand
     protected $signature = 'make:curd
                             {tables : 数据表名称，使用英文逗号(,)分割多个值}
                             {--c|ctl_namespace= : 控制器命令空间，会根据该命令空间解析所有文件路径文件}
-                            {--m|module='.HttpConstants::MODULES_API.' : 应用项目模块名称: System Admin Api }
+                            {--m|module= : 应用项目模块名称: System Admin Api }
                             {--f|force= : 强制重新生成所有文件，默认情况下，文件已存在则跳过生成}
                             {--s|short_name=1 : 文件生成是否使用短名称，默认会加入文件类型后缀}
                             {--b|biz_column='.CurdConstants::BIZ_ID_FIELD_NAME.' : 业务ID字段名称，数据表字段名称}
@@ -210,7 +210,7 @@ class Generator extends GeneratorCommand
     protected function initModule(): void
     {
         $this->module = (string) $this->getOptionWithTrim('module');
-        if (! in_array($this->module, HttpConstants::MODULES_LIST, true)) {
+        if (! in_array($this->module, config('make.modules'), true)) {
             throw new \InvalidArgumentException('The module "'.$this->module.'" is not supported.');
         }
     }
@@ -223,20 +223,12 @@ class Generator extends GeneratorCommand
      */
     protected function getBaseClass(): array
     {
-        $baseList = [
-            HttpConstants::MODULES_ADMIN => [
-                HttpConstants::CONTROLLER_SUFFIX => $this->parseClassNamespaceAndName(\App\Http\Admin\Controllers\BaseController::class),
-                HttpConstants::SERVICE_SUFFIX    => $this->parseClassNamespaceAndName(\App\Http\Admin\Services\BaserService::class),
-                HttpConstants::VALIDATE_SUFFIX   => $this->parseClassNamespaceAndName(\App\Http\Admin\Validates\BaseValidate::class),
-            ],
-            HttpConstants::MODULES_API    => [
-                HttpConstants::CONTROLLER_SUFFIX => $this->parseClassNamespaceAndName(\App\Http\Api\Controllers\BaseController::class),
-                HttpConstants::SERVICE_SUFFIX    => $this->parseClassNamespaceAndName(\App\Http\Api\Services\BaseService::class),
-                HttpConstants::VALIDATE_SUFFIX   => $this->parseClassNamespaceAndName(\App\Http\Api\Validates\BaseValidate::class),
-            ],
-        ];
+		$configPath = sprintf('make.base_list.%s', $this->module);
+		$baseList = config($configPath);
 
-        return $baseList[$this->module];
+	    return array_map(function($item){
+		    return $this->parseClassNamespaceAndName($item);
+	    }, $baseList);
     }
 
     /**
